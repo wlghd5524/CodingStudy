@@ -6,10 +6,11 @@
 
 #출력
 #두 번째로 큰 정수를 출력한다.
-
-
 l = [0,0,0]
 a,b,c = input().split()
+a = int(a)
+b = int(b)
+c = int(c)
 l[0] = a
 l[1] = b
 l[2] = c
