@@ -8,32 +8,25 @@ int main() {
     bool cut = false;
     string str;
     cin >> n;
-    for(int i=0; i<n;i++) {
+    for (int i = 0; i < n; i++) {
+        cut = false;
         cin >> str;
-        for(int j=0;j<str.length();j++) {
-            if(str.length()==1) {
-                count++;
+        for (int j = 0; j < str.length(); j++) {
+            if (str.length() == 1)
                 break;
-            }
-            if(str[j] == str[j+1]) {
+            if (str[j] == str[j + 1])
                 continue;
-            }
-            if(str.length()==2 && str[j] == str[j-1]) {
-                cut = true;
-                break;
-            }
-            for(int p=j+2;p<str.length();p++) {
-                if(str[p]==str[j]) {
+            for (int p = j + 2; p < str.length(); p++) {
+                if (str[p] == str[j]) {
                     cut = true;
                     break;
                 }
             }
-            if(cut==true)
-                break;
         }
-        if(cut==true)
-            break;
+        if (cut == true)
+            continue;
         count++;
     }
+    cout << count;
     return 0;
 }
