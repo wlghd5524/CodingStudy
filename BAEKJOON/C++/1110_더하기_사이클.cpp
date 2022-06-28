@@ -18,4 +18,5 @@ int main() {
             break;
     }
     cout << count;
+    return 0;
 }
