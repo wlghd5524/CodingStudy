@@ -1,16 +1,11 @@
 #include <iostream>
+
 using namespace std;
+
 int main() {
-    int a,b,v,day;
-    int now = 0;
+    int a, b, v, day;
     cin >> a >> b >> v;
-    for(day=1;;day++) {
-        now += a;
-        if(now >= v) {
-            break; 
-        }
-        now -= b;
-    }
+    day = (v - b - 1) / (a - b) + 1;
     cout << day;
     return 0;
 }
