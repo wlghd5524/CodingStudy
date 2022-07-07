@@ -6,4 +6,5 @@ int main() {
     cin >> n;
     sort(n.begin(),n.end(),greater<>());
     cout << n;
+    return 0;
 }
