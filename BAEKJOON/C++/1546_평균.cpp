@@ -16,4 +16,5 @@ int main() {
         sum += score[i];
     }
     cout << sum / n;
+    return 0;
 }
