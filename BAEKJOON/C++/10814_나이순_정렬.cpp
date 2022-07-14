@@ -9,8 +9,7 @@ bool cmp(pair<pair<int, string>, int> a, pair<pair<int, string>, int> b) {
     return a.first.first < b.first.first;
 }
 int main() {
-    string name;
-    int n, age;
+    int n;
     cin >> n;
     vector<pair<pair<int, string>, int>> mem(n);
     for (int i = 0; i < n; i++) {
