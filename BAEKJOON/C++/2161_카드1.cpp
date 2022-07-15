@@ -8,7 +8,7 @@ int main() {
     for (int i = 0; i < n; i++) {
         arr[i] = i + 1;
     }
-    while (true) {
+    while (1) {
         if (arr.size() == 1) {
             cout << arr[0];
             break;
