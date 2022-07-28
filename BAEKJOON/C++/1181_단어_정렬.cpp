@@ -24,4 +24,5 @@ int main() {
     }
     for (int i = 0; i < word.size(); i++)
         cout << word[i] << "\n";
+    return 0;
 }
