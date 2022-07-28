@@ -9,7 +9,6 @@ int main() {
         if (str[i] == 'X')
             count++;
         else {
-
             if (count % 4 == 0) {
                 for (int j = 0; j < count / 4; j++)
                     result += "AAAA";
@@ -25,9 +24,9 @@ int main() {
             }
             if (str[i] == '.')
                 result += ".";
-
             count = 0;
         }
     }
     cout << result;
+    return 0;
 }
