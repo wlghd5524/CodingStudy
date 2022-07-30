@@ -2,20 +2,20 @@
 using namespace std;
 int main() {
     int e, s, m, count = 1, i = 0;
-    int countE = 1, countS = 1, countM = 1;
+    int count_e = 1, count_s = 1, count_m = 1;
     cin >> e >> s >> m;
     while (1) {
-        if (e == countE && s == countS && m == countM)
+        if (e == count_e && s == count_s && m == count_m)
             break;
-        countE++;
-        countS++;
-        countM++;
-        if (countE == 16)
-            countE = 1;
-        if (countS == 29)
-            countS = 1;
-        if (countM == 20)
-            countM = 1;
+        count_e++;
+        count_s++;
+        count_m++;
+        if (count_e == 16)
+            count_e = 1;
+        if (count_s == 29)
+            count_s = 1;
+        if (count_m == 20)
+            count_m = 1;
         count++;
     }
     cout << count;
