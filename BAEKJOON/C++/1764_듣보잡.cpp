@@ -6,20 +6,21 @@ int main() {
     int n, m, count = 0;
     string data;
     cin >> n >> m;
-    map<string, int> cantHear;
-    map<string, int> cantBoth;
+    map<string, int> cant_hear;
+    map<string, int> cant_both;
     for (int i = 0; i < n; i++) {
         cin >> data;
-        cantHear[data] = 0;
+        cant_hear[data] = 0;
     }
     for (int i = 0; i < m; i++) {
         cin >> data;
-        if (cantHear.find(data) != cantHear.end()) {
-            cantBoth[data] = 0;
+        if (cant_hear.find(data) != cant_hear.end()) {
+            cant_both[data] = 0;
             count++;
         }
     }
     cout << count << "\n";
-    for (auto iter = cantBoth.begin(); iter != cantBoth.end(); iter++)
+    for (auto iter = cant_both.begin(); iter != cant_both.end(); iter++)
         cout << iter->first << "\n";
+    return 0;
 }
