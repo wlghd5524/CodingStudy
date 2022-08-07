@@ -13,8 +13,8 @@ int gcd(int a, int b) {
 int main() {
     int i = 0;
     string a, b;
-    int resultA;
-    int resultB;
+    int reuslt_a;
+    int reuslt_b;
     int tmp;
     string str;
     cin >> str;
@@ -22,14 +22,15 @@ int main() {
         a += str[i];
     for (i += 1; i < str.size(); i++)
         b += str[i];
-    resultA = stoi(a);
-    resultB = stoi(b);
+    reuslt_a = stoi(a);
+    reuslt_b = stoi(b);
     while (1) {
-        if (gcd(resultA, resultB) == 1)
+        if (gcd(reuslt_a, reuslt_b) == 1)
             break;
-        tmp = resultA;
-        resultA = resultA / gcd(resultA, resultB);
-        resultB = resultB / gcd(tmp, resultB);
+        tmp = reuslt_a;
+        reuslt_a = reuslt_a / gcd(reuslt_a, reuslt_b);
+        reuslt_b = reuslt_b / gcd(tmp, reuslt_b);
     }
-    cout << resultA << ":" << resultB;
+    cout << reuslt_a << ":" << reuslt_b;
+    return 0;
 }
