@@ -1,8 +1,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-int main()
-{
+int main() {
     int n;
     int sum = 0;
     int tmp;
@@ -24,4 +23,5 @@ int main()
             sum += arr[j];
     }
     cout << sum;
+    return 0;
 }
