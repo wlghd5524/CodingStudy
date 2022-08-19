@@ -19,4 +19,5 @@ int main() {
     sort(mem.begin(), mem.end(), cmp);
     for (int i = 0; i < n; i++)
         cout << mem[i].first.first << " " << mem[i].first.second << "\n";
+    return 0;
 }
