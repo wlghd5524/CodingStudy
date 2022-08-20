@@ -29,14 +29,17 @@ int main() {
     int n, x, y;
     cin >> n;
     Point point[n];
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++) {
         point[i] = Point();
+    }
     for (int i = 0; i < n; i++) {
         cin >> x >> y;
         point[i].setX(x);
         point[i].setY(y);
     }
     sort(point, point + n, cmp);
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++){
         cout << point[i].getX() << " " << point[i].getY() << "\n";
+    }
+    return 0;
 }
