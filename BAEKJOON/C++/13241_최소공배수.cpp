@@ -9,6 +9,7 @@ int main() {
     long long int a, b;
     cin >> a >> b;
     cout << lcm(a, b);
+    return 0;
 }
 
 long long int gcd(long long int a, long long int b) {
