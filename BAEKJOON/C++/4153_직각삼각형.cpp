@@ -17,4 +17,5 @@ int main() {
         else
             cout << "wrong\n";
     }
+    return 0;
 }
