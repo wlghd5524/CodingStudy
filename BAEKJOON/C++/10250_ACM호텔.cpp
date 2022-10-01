@@ -23,4 +23,5 @@ int main() {
             cout << fl << ho << "\n";
         count = 0;
     }
+    return 0;
 }
