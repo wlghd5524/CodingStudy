@@ -8,34 +8,35 @@ int main() {
     string command, data;
     cin >> n;
     getchar();
-    vector<int> queue;
+    vector<int> stack;
     for (int i = 0; i < n; i++) {
         getline(cin, command);
         if (command.find("push") == 0) {
             data = command.substr(5);
-            queue.emplace_back(stoi(data));
+            stack.emplace_back(stoi(data));
         }
         else if (command == "pop") {
-            if (queue.empty() == true)
+            if (stack.empty() == true)
                 cout << -1 << "\n";
             else {
-                cout << queue.back() << "\n";
-                queue.pop_back();
+                cout << stack.back() << "\n";
+                stack.pop_back();
             }
         }
         else if (command == "size")
-            cout << queue.size() << "\n";
+            cout << stack.size() << "\n";
         else if (command == "empty") {
-            if (queue.empty() == true)
+            if (stack.empty() == true)
                 cout << 1 << "\n";
             else
                 cout << 0 << "\n";
         }
         else if (command == "top") {
-            if (queue.empty() == true)
+            if (stack.empty() == true)
                 cout << -1 << "\n";
             else 
-                cout << queue.back() << "\n";
+                cout << stack.back() << "\n";
         }
     }
+    return 0;
 }
