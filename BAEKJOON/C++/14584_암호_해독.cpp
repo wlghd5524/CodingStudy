@@ -12,13 +12,13 @@ int main() {
         cin >> word[i];
     }
     while(1) {
-        for(int i = 0; i < str.size(); i++) {
+        for (int i = 0; i < str.size(); i++) {
             str[i]++;
             if(str[i] > 122) {
                 str[i] -= 26;
             }
         }
-        for(int i = 0; i < word.size(); i++) {
+        for (int i = 0; i < word.size(); i++) {
             if(str.find(word[i]) != string::npos) {
                 cout << str;
                 return 0;
