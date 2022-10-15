@@ -55,4 +55,5 @@ int main() {
                 cout << deque.back() << "\n";
         }
     }
+    return 0;
 }
