@@ -12,7 +12,7 @@ int main() {
             dp[i] = dp[i - 1] + 1;
         }
         else {
-            dp[i] = dp[i - 3] + 1;
+            dp[i] = dp[i - 3] + 1; 
         }
     }
     if (dp[n] % 2 == 0) {
