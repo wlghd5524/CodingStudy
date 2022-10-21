@@ -17,15 +17,3 @@ vector<int> solution(vector<int> array, vector< vector<int> > commands) {
     }
     return answer;
 }
-
-int main() {
-    vector<int> array;
-    vector<vector<int>> commands(1);
-    for(int i = 1;i<=7;i++) {
-        array.push_back(i);
-    }
-    commands[0].push_back(2);
-    commands[0].push_back(5);
-    commands[0].push_back(3);
-    solution(array,commands);
-}
