@@ -1,41 +1,42 @@
 #include <iostream>
 #include <map>
-#include <vector>
 using namespace std;
+int timeToInt(string s) {
+    return ((s[0] - '0') * 1000) + ((s[1] - '0') * 100) + ((s[3] - '0') * 10) + (s[4] - '0'); //시간을 int 형태로 변환 ex)06:00 -> 600
+}
 int main() {
-    ios_base :: sync_with_stdio(false);
+    ios_base ::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    string s,e,q;
-    int start_time,end_time,streaming_end_time;
-    string time, name;
-    map<string,int> m;
+    int start_time, end_time, streaming_end_time;
+    map<string, int> m;
+    string s, e, q;
     cin >> s >> e >> q;
-    start_time = ((s[0]-'0')*1000)+((s[1]-'0')*100)+((s[3]-'0')*10)+(s[4]-'0');
-    end_time = ((e[0]-'0')*1000)+((e[1]-'0')*100)+((e[3]-'0')*10)+(e[4]-'0');
-    streaming_end_time = ((q[0]-'0')*1000)+((q[1]-'0')*100)+((q[3]-'0')*10)+(q[4]-'0');
-    while(!cin.eof()) {
+    start_time = timeToInt(s);
+    end_time = timeToInt(e);
+    streaming_end_time = timeToInt(q);
+    while (1) {
+        string time, name;
         cin >> time >> name;
-        int t = ((time[0]-'0')*1000)+((time[1]-'0')*100)+((time[3]-'0')*10)+(time[4]-'0');
-        if(m.find(name)!=m.end()) {
-            if(t>=end_time&&t<=streaming_end_time) {        //총회 끝나고 스트리밍 종료 전에 채팅쳤을때
-                m[name] = 1;
-            }
-            else if((t<end_time||t>streaming_end_time)&&m[name]!=1) {   //끝나기 전이나 스트리밍 종료 후 채팅쳤을때
-                m[name] = 0;
-            }
+        if(cin.eof()) {
+            break;
         }
-        else if(t<=start_time) {
+        int t = timeToInt(time);
+        if (t <= start_time) { //개강총회 시작하기 전에 채팅쳤을 때
             m[name] = 0;
         }
-        
-        
-    }
-    for(auto iter = m.begin();iter!=m.end();iter++) {
-        if(iter->second == 0) {
-            m.erase(iter);
-            iter--;
+        else if (m.find(name) != m.end()) {
+            if (t >= end_time && t <= streaming_end_time) { //출석 명단에 있는 학회원이 총회 끝나고 스트리밍 종료 전에 채팅쳤을때
+                m[name] = 1;
+            }
         }
     }
-    cout << m.size();
+    int result = 0;
+    for (auto iter = m.begin(); iter != m.end(); iter++) {
+        if (iter->second == 1) { 
+            result++;
+        } 
+    }
+    cout << result;
+    return 0;
 }
