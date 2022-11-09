@@ -39,9 +39,9 @@ int main()
         }
     }
     int result = 0;
-    for (auto iter = m.begin(); iter != m.end(); iter++) //출석이 인정된 학회원 카운트
+    for (auto iter = m.begin(); iter != m.end(); iter++) 
     { 
-        if (iter->second == 1)
+        if (iter->second == 1) //출석이 인정된 학회원 카운트
         {
             result++;
         }
