@@ -178,3 +178,11 @@ int moduloSub(int a, int b, int mod)
 {
     return ((a % mod) - (b % mod) + mod) % mod;
 }
+
+int factorial(int n)
+{
+    if (n <= 1)
+        return 1;
+    else
+        return n * factorial(n - 1);
+}
