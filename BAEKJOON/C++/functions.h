@@ -137,7 +137,20 @@ string longMulti(string x, string y)
     }
     return sum;
 }
-
+string longDiv(string a, long long b) {
+    long long res=0;
+    string c;
+	for(long long i = 0; i < a.length(); i++) {
+        res = (res*10)+(a[i]-'0');
+        c += (res/b)+'0';
+        res %= b;
+    }
+    while (*c.begin() == '0')
+    {
+        c.erase(0, 1);
+    }
+    return c;
+}
 int gcd(int a, int b)
 {
     int tmp;
