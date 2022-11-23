@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-string move(string point, string cmd);
+string Move(string point, string cmd);
 
 int main()
 {
@@ -13,10 +13,10 @@ int main()
     {
         string cmd, king_tmp, stone_tmp;
         cin >> cmd;
-        king_tmp = move(point_king, cmd);
+        king_tmp = Move(point_king, cmd);
         if (king_tmp == point_stone)
         {
-            stone_tmp = move(point_stone, cmd);
+            stone_tmp = Move(point_stone, cmd);
             if (stone_tmp != point_stone)
             {
                 point_king = king_tmp;
@@ -32,7 +32,7 @@ int main()
          << point_stone;
     return 0;
 }
-string move(string point, string cmd)
+string Move(string point, string cmd)
 {
     if (cmd == "R" && point[0] < 'H')
     {
