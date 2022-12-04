@@ -3,7 +3,7 @@
 #include <algorithm>
 #include <vector>
 using namespace std;
-bool cmp(string a, string b) {
+bool Cmp(string a, string b) {
     if (a.size() == b.size())
         return a < b;
     return a.size() < b.size();
@@ -17,7 +17,7 @@ int main() {
         cin >> tmp;
         word.push_back(tmp);
     }
-    sort(word.begin(), word.end(), cmp);
+    sort(word.begin(), word.end(), Cmp);
     for (int i = 0; i < n; i++) {
         if (word[i] == word[i + 1] && i + 1 < n)
             word.erase(word.begin() + i - 1);
