@@ -1,10 +1,10 @@
 #include <iostream>
 #include <string>
 using namespace std;
-void printYes() {
+void PrintYes() {
     cout << "yes\n";
 }
-void printNo() {
+void PrintNo() {
     cout << "no\n";
 }
 int main() {
@@ -14,30 +14,30 @@ int main() {
         if (str == "0")
             break;
         if (str.size() == 1)
-            printYes();
+            PrintYes();
         else if (str.size() == 2) {
             if (str[0] == str[1])
-                printYes();
+                PrintYes();
             else
-                printNo();
+                PrintNo();
         }
         else if (str.size() == 3) {
             if (str[0] == str[2])
-                printYes();
+                PrintYes();
             else
-                printNo();
+                PrintNo();
         }
         else if (str.size() == 4) {
             if (str[0] == str[3] && str[1] == str[2])
-                printYes();
+                PrintYes();
             else
-                printNo();
+                PrintNo();
         }
         else if (str.size() == 5) {
             if (str[0] == str[4] && str[1] == str[3])
-                printYes();
+                PrintYes();
             else
-                printNo();
+                PrintNo();
         }
     }
     return 0;
