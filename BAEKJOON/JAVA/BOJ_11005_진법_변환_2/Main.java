@@ -23,5 +23,6 @@ public class Main {
         StringBuffer sb = new StringBuffer(result);
         result = sb.reverse().toString();
         System.out.print(result);
+        input.close();
     }
 }
