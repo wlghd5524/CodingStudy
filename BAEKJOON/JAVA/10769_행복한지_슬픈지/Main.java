@@ -29,5 +29,6 @@ public class Main {
                 System.out.print("sad");
             }
         }
+        input.close();
     }
 }
