@@ -1,4 +1,4 @@
-//package BOJ_15819_너의_핸들은;
+package BOJ_15819_너의_핸들은;
 import java.util.*;
 public class Main {
     public static void main(String[] args) {
