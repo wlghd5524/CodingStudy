@@ -5,12 +5,11 @@ public class Main {
         Scanner input = new Scanner(System.in);
         String a = input.next();
         String b = input.next();
-        while(a.length()!=b.length()) {
-            if(a.length() > b.length()) {
-                b = "0"+b;
-            }
-            else {
-                a = "0"+a;
+        while (a.length() != b.length()) {
+            if (a.length() > b.length()) {
+                b = "0" + b;
+            } else {
+                a = "0" + a;
             }
         }
         StringBuffer sbf = new StringBuffer(a);
@@ -18,22 +17,21 @@ public class Main {
         sbf = new StringBuffer(b);
         b = sbf.reverse().toString();
         String result = "0";
-        for(int i = 0;i<a.length();i++) {
-            int tmp = (a.charAt(i)-'0') + (b.charAt(i)-'0') + result.charAt(i)-'0';
-            if(tmp>1) {
+        for (int i = 0; i < a.length(); i++) {
+            int tmp = (a.charAt(i) - '0') + (b.charAt(i) - '0') + result.charAt(i) - '0';
+            if (tmp > 1) {
                 tmp -= 2;
                 result += "1";
-            }
-            else {
+            } else {
                 result += "0";
             }
             StringBuilder sbd = new StringBuilder(result);
-            sbd.setCharAt(i, (char)(tmp+'0'));
+            sbd.setCharAt(i, (char) (tmp + '0'));
             result = sbd.toString();
         }
-        if(result.length()>1) {
-            while(result.charAt(result.length()-1)=='0' && result.length()!=1) {
-                result = result.substring(0,result.length()-1);
+        if (result.length() > 1) {
+            while (result.charAt(result.length() - 1) == '0' && result.length() != 1) {
+                result = result.substring(0, result.length() - 1);
             }
         }
         sbf = new StringBuffer(result);
