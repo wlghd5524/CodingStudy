@@ -5,22 +5,20 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int n = input.nextInt();
-        List<Integer> a = new ArrayList<Integer>();
-        List<Integer> b = new ArrayList<Integer>();
+        int[] a = new int[n];
+        int[] b = new int[n];
         for (int i = 0; i < n; i++) {
-            int tmp = input.nextInt();
-            a.add(tmp);
+            a[i] = input.nextInt();
         }
         for (int i = 0; i < n; i++) {
-            int tmp = input.nextInt();
-            b.add(tmp);
+            b[i] = input.nextInt();
         }
         char last_winner = 0;
         int max_cnt = 0;
         int a_cnt = 0;
         int b_cnt = 0;
         for (int i = 0; i < n; i++) {
-            if (a.get(i) == b.get(i)) {
+            if (a[i] == b[i]) {
                 if (last_winner == 'a') {
                     last_winner = 'b';
                     b_cnt++;
@@ -30,27 +28,27 @@ public class Main {
                     a_cnt++;
                     b_cnt = 0;
                 }
-            } else if (a.get(i) == 1 && b.get(i) == 2) {
+            } else if (a[i] == 1 && b[i] == 2) {
                 last_winner = 'b';
                 b_cnt++;
                 a_cnt = 0;
-            } else if (a.get(i) == 2 && b.get(i) == 3) {
+            } else if (a[i] == 2 && b[i] == 3) {
                 last_winner = 'b';
                 b_cnt++;
                 a_cnt = 0;
-            } else if (a.get(i) == 3 && b.get(i) == 1) {
+            } else if (a[i] == 3 && b[i] == 1) {
                 last_winner = 'b';
                 b_cnt++;
                 a_cnt = 0;
-            } else if (a.get(i) == 2 && b.get(i) == 1) {
+            } else if (a[i] == 2 && b[i] == 1) {
                 last_winner = 'a';
                 a_cnt++;
                 b_cnt = 0;
-            } else if (a.get(i) == 3 && b.get(i) == 2) {
+            } else if (a[i] == 3 && b[i] == 2) {
                 last_winner = 'a';
                 a_cnt++;
                 b_cnt = 0;
-            } else if (a.get(i) == 1 && b.get(i) == 3) {
+            } else if (a[i] == 1 && b[i] == 3) {
                 last_winner = 'a';
                 a_cnt++;
                 b_cnt = 0;
