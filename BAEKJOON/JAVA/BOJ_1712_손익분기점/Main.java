@@ -1,4 +1,4 @@
-//package BOJ_1712_손익분기점;
+package BOJ_1712_손익분기점;
 import java.util.*;
 
 public class Main {
