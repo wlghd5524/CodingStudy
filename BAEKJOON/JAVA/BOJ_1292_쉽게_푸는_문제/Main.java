@@ -1,4 +1,4 @@
-//package BOJ_1292_쉽게_푸는_문제;
+package BOJ_1292_쉽게_푸는_문제;
 import java.util.*;
 public class Main {
     public static void main(String[] args) {
@@ -19,5 +19,6 @@ public class Main {
             }
         }
         System.out.println(arr[b]-arr[a-1]);
+        input.close();
     }
 }
