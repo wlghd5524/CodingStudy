@@ -5,9 +5,9 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        if(n==1) {
+        if (n == 1) {
             System.out.print(0);
-        }
+        } 
         else {
             boolean prime[] = new boolean[n + 1];
             prime[0] = prime[1] = true;
@@ -33,15 +33,13 @@ public class Main {
                     cnt++;
                     sum -= prime_list.get(a);
                     a++;
-                } 
-                else if (sum < n) {
+                } else if (sum < n) {
                     b++;
                     if (b == prime_list.size()) {
                         break;
                     }
                     sum += prime_list.get(b);
-                } 
-                else {
+                } else {
                     sum -= prime_list.get(a);
                     a++;
                 }
