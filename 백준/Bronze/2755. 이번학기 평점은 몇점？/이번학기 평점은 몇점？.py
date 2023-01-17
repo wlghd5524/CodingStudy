@@ -1,7 +1,6 @@
 def roundTraditional(val, digits):
    return round(val+10**(-len(str(val))-1), digits)
 
-
 n = int(input())
 sum = 0
 sum_credit = 0
@@ -34,10 +33,9 @@ for i in range(0, n):
     elif acheivement == "D-":
         sum += credit*0.7
 result = str(roundTraditional(sum/sum_credit, 2))
-
 while len(result) < 4:
     if len(result) == 1:
         result += "."
-    else :
+    else:
         result += "0"
 print(result)
