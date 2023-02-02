@@ -1,6 +1,6 @@
 import sys
 input = sys.stdin.readline
-sys.setrecursionlimit(100000000)
+sys.setrecursionlimit(100000)
 def dfs(a, b):
     graph[a][b] = 0
     if b-1 >= 0 and graph[a][b-1] == 1:
