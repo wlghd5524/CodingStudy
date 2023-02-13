@@ -7,15 +7,23 @@ def is_prime_number(x):
             return False
     return True
 
+l = []
 while True:
     n = int(input())
     if n == 0:
         break
+    l.append(n)
+m = max(l)
+is_prime = [False for i in range(m+1)]
+for i in range(2, m+1):
+    if is_prime_number(i):
+        is_prime[i] = True
+for i in l:
     a = 2
-    b = n-2
+    b = i-2
     while True:
-        if is_prime_number(a) and is_prime_number(b):
-            print(str(n) + " = " + str(a) + " + " + str(b))
+        if is_prime[a] and is_prime[b]:
+            print(str(i) + " = " + str(a) + " + " + str(b))
             break
         a += 1
         b -= 1
