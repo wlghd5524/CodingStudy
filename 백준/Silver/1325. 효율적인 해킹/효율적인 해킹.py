@@ -1,15 +1,7 @@
 import sys
 from collections import deque
 input = sys.stdin.readline
-sys.setrecursionlimit(100000)
 
-def dfs(v):
-    global cnt
-    cnt += 1
-    visited[v] = True
-    for i in graph[v]:
-        if not visited[i]:
-            dfs(i)
 
 def bfs(v):
     visited[v] = True
@@ -23,6 +15,7 @@ def bfs(v):
                 q.append(i)
                 visited[i] = True
                 cnt += 1
+
 
 n, m = map(int, input().split())
 graph = [[] for i in range(n+1)]
