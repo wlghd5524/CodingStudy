@@ -7,8 +7,6 @@ int result = 0;
 void dfs(int a, int b, int cnt, string bt)
 {
     bt[graph[a][b] - 'A'] = '1';
-    char tmp = graph[a][b];
-
     if (b - 1 >= 0 && bt[graph[a][b - 1] - 'A'] == '0')
     {
         dfs(a, b - 1, cnt + 1, bt);
