@@ -1,12 +1,9 @@
 #include <iostream>
 #include <queue>
-#include <vector>
 #include <map>
 using namespace std;
 
 int N, M;
-vector<pair<int, int>> ladders;
-vector<pair<int, int>> snakes;
 map<int,int> m;
 void bfs() {
     bool visited[101] = {false};
@@ -42,8 +39,6 @@ void bfs() {
 int main()
 {
     cin >> N >> M;
-    ladders.reserve(N);
-    snakes.reserve(M);
     for (int i = 0; i < N+M; i++)
     {
         int x, y;
