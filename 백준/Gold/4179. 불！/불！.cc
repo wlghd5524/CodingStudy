@@ -1,7 +1,7 @@
 #include <iostream>
 #include <queue>
 using namespace std;
-int N, M;
+int R, C;
 char graph[1000][1000];
 bool visited[1000][1000] = {false};
 int timeGraph[1000][1000] = {0};
@@ -11,9 +11,9 @@ void bfs()
 {
     queue<pair<int, int>> jihoon_q;
     queue<pair<int, int>> fire_q;
-    for (int i = 0; i < N; i++)
+    for (int i = 0; i < R; i++)
     {
-        for (int j = 0; j < M; j++)
+        for (int j = 0; j < C; j++)
         {
             if (graph[i][j] == 'J')
             {
@@ -39,7 +39,7 @@ void bfs()
             {
                 int xx = x + dx[i];
                 int yy = y + dy[i];
-                if (xx >= 0 && xx < N && yy >= 0 && yy < M)
+                if (xx >= 0 && xx < R && yy >= 0 && yy < C)
                 {
                     if (graph[xx][yy] == '.')
                     {
@@ -55,16 +55,11 @@ void bfs()
             int a = jihoon_q.front().first;
             int b = jihoon_q.front().second;
             jihoon_q.pop();
-            if (graph[a][b] == 'D')
-            {
-                
-                
-            }
             for (int i = 0; i < 4; i++)
             {
                 int ax = a + dx[i];
                 int bx = b + dy[i];
-                if (ax >= 0 && ax < N && bx >= 0 && bx < M)
+                if (ax >= 0 && ax < R && bx >= 0 && bx < C)
                 {
                     if (!visited[ax][bx] && graph[ax][bx] == '.')
                     {
@@ -73,23 +68,23 @@ void bfs()
                         visited[ax][bx] = true;
                     }
                 }
-                else {
-                    cout << timeGraph[a][b]+1;
+                else
+                {
+                    cout << timeGraph[a][b] + 1;
                     return;
                 }
             }
         }
-        
     }
     cout << "IMPOSSIBLE";
 }
 
 int main()
 {
-    cin >> N >> M;
-    for (int i = 0; i < N; i++)
+    cin >> R >> C;
+    for (int i = 0; i < R; i++)
     {
-        for (int j = 0; j < M; j++)
+        for (int j = 0; j < C; j++)
         {
             cin >> graph[i][j];
         }
