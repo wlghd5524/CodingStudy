@@ -7,17 +7,21 @@ vector<pair<int, int>> graph[1001];
 int dist[1001] = {0};
 bool visited[1001] = {false};
 
-int bfs() {
-    fill(dist,dist+1001,-1);
+int bfs()
+{
+    fill(dist, dist + 1001, -1);
     queue<int> q;
     q.push(x);
     visited[x] = true;
     dist[x] = 0;
-    while(!q.empty()) {
+    while (!q.empty())
+    {
         int cur = q.front();
         q.pop();
-        for(auto next : graph[cur]) {
-            if(dist[next.first] == -1) {
+        for (auto next : graph[cur])
+        {
+            if (dist[next.first] == -1)
+            {
                 dist[next.first] = dist[cur] + next.second;
                 q.push(next.first);
             }
