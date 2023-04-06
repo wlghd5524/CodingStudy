@@ -26,38 +26,29 @@ void bfs()
             }
             return;
         }
-        if (x - 1 >= 0)
+        if (x - 1 >= 0 && !visited[x - 1])
         {
-            if (!visited[x - 1])
-            {
-                vector<int> tmp_path = path;
-                tmp_path.push_back(x - 1);
-                q.push({x - 1, tmp_path});
-                graph[x - 1] = graph[x] + 1;
-                visited[x - 1] = true;
-            }
+            vector<int> tmp_path = path;
+            tmp_path.push_back(x - 1);
+            q.push({x - 1, tmp_path});
+            graph[x - 1] = graph[x] + 1;
+            visited[x - 1] = true;
         }
-        if (x + 1 < MAX)
+        if (x + 1 < MAX && !visited[x + 1])
         {
-            if (!visited[x + 1])
-            {
-                vector<int> tmp_path = path;
-                tmp_path.push_back(x + 1);
-                q.push({x + 1, tmp_path});
-                graph[x + 1] = graph[x] + 1;
-                visited[x + 1] = true;
-            }
+            vector<int> tmp_path = path;
+            tmp_path.push_back(x + 1);
+            q.push({x + 1, tmp_path});
+            graph[x + 1] = graph[x] + 1;
+            visited[x + 1] = true;
         }
-        if (x * 2 < MAX)
+        if (x * 2 < MAX && !visited[x * 2])
         {
-            if (!visited[x * 2])
-            {
-                vector<int> tmp_path = path;
-                tmp_path.push_back(x * 2);
-                q.push({x * 2, tmp_path});
-                graph[x * 2] = graph[x] + 1;
-                visited[x * 2] = true;
-            }
+            vector<int> tmp_path = path;
+            tmp_path.push_back(x * 2);
+            q.push({x * 2, tmp_path});
+            graph[x * 2] = graph[x] + 1;
+            visited[x * 2] = true;
         }
     }
 }
