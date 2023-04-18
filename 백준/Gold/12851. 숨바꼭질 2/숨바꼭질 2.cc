@@ -4,7 +4,6 @@
 using namespace std;
 int n, k;
 bool visited[200001];
-int MIN = 200000000;
 void bfs()
 {
     queue<pair<int, int>> q;
