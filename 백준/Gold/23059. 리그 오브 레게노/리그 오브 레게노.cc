@@ -46,17 +46,14 @@ int main()
     }
     priority_queue<pair<string, int>, vector<pair<string, int>>, cmp> pq;
     vector<string> result;
-    index = 0;
     int length = str_m.size();
     for (int i = 1; i <= length; i++)
     {
         if (inDegree[i] == 0)
         {
-            pq.push({int_m[i], index});
+            pq.push({int_m[i], 0});
         }
     }
-    index++;
-
     while (!pq.empty())
     {
         int cur = str_m[pq.top().first];
@@ -71,7 +68,6 @@ int main()
                 pq.push({int_m[next], cnt + 1});
             }
         }
-        //index++;
     }
     if (result.size() == length)
     {
