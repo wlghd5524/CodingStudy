@@ -9,7 +9,8 @@ bool check(int a, int b)
     bool bit[10] = {false};
     for (int i = 0; i < 9; i++)
     {
-        if(i == b) {
+        if (i == b)
+        {
             continue;
         }
         if (m[a][i] == m[a][b])
@@ -17,8 +18,10 @@ bool check(int a, int b)
             return false;
         }
     }
-    for(int i = 0;i<9;i++) {
-        if(i == a) {
+    for (int i = 0; i < 9; i++)
+    {
+        if (i == a)
+        {
             continue;
         }
         if (m[i][b] == m[a][b])
@@ -26,7 +29,7 @@ bool check(int a, int b)
             return false;
         }
     }
-    for (int i = a - (a % 3) ; i < a - (a % 3) + 3; i++)
+    for (int i = a - (a % 3); i < a - (a % 3) + 3; i++)
     {
         for (int j = b - (b % 3); j < b - (b % 3) + 3; j++)
         {
