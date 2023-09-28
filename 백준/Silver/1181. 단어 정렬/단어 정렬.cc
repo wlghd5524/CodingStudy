@@ -1,34 +1,36 @@
 #include <iostream>
-#include <string>
-#include <algorithm>
-#include <map>
 #include <vector>
+#include <algorithm>
 using namespace std;
-bool cmp(string a, string b) {
-    if(a.size()==b.size()) {
-        return a<b;
+bool compare(string a, string b) // sort 정렬 조건 함수
+{
+    if (a.size() == b.size()) // a와 b의 길이가 같을 때
+    {
+        return a < b; // 사전순
     }
-    return a.size()<b.size();
+    return a.size() < b.size(); // 길이가 작은 순
 }
-int main() {
-    int n,i=0, count = 0;
+int main()
+{
+    int n;
     cin >> n;
-    //string word[n];
-    vector<string> word2;
-    map<string,int>word;
-    string tmp;
-    for(int i=0;i<n;i++) {
-        cin >> tmp;
-        word.insert({tmp,tmp.size()});
+    vector<string> list(n);
+    for (int i = 0; i < n; i++)
+    {
+        cin >> list[i];
     }
-    for(auto iter = word.begin() ; iter != word.end(); iter++){
-        tmp = iter->first;
-        word2.emplace_back(iter->first);
-        i++;
-	}
-    sort(word2.begin(),word2.end(),cmp);
-
-    for(int i=0;i<word2.size();i++) {
-        cout << word2[i] << "\n";
+    sort(list.begin(), list.end(), compare);
+    for (int i = 0; i < n; i++)
+    {
+        if (i == 0)
+        {
+            cout << list[i] << "\n";
+            continue;
+        }
+        if (list[i] != list[i - 1]) // 중복되는 문자열 출력 X
+        {
+            cout << list[i] << "\n";
+        }
     }
+    return 0;
 }
