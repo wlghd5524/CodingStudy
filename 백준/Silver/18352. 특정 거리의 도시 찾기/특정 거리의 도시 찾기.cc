@@ -5,25 +5,30 @@
 using namespace std;
 int N, M, K, X;
 vector<vector<int>> graph;
-vector<int> depth;
+vector<bool> isVisited;
+vector<int> result;
 
 void bfs(int start)
 {
     queue<pair<int, int>> q;
     q.push({start, 0});
-    depth[start] = 0;
+    isVisited[start] = true;
     while (!q.empty())
     {
         int cur = q.front().first;
         int curDep = q.front().second;
+        if (curDep == K)
+        {
+            result.push_back(cur);
+        }
         q.pop();
         for (int i = 0; i < graph[cur].size(); i++)
         {
             int next = graph[cur][i];
-            if (depth[next] == -1)
+            if (!isVisited[next])
             {
                 q.push({next, curDep + 1});
-                depth[next] = curDep + 1;
+                isVisited[next] = true;
             }
         }
     }
@@ -32,8 +37,8 @@ int main()
 {
     cin >> N >> M >> K >> X;
     graph.resize(N + 1);
-    depth.resize(N + 1);
-    fill(depth.begin(), depth.end(), -1);
+    isVisited.resize(N + 1);
+    fill(isVisited.begin(), isVisited.end(), false);
     for (int i = 0; i < M; i++)
     {
         int from, to;
@@ -45,16 +50,17 @@ int main()
         sort(graph[i].begin(), graph[i].end());
     }
     bfs(X);
-    if (find(depth.begin(), depth.end(), K) == depth.end())
+    sort(result.begin(), result.end());
+    if (result.empty())
     {
         cout << -1;
-        return 0;
     }
-    for (int i = 1; i <= N; i++)
+    else
     {
-        if (depth[i] == K)
+        for (int i = 0; i < result.size(); i++)
         {
-            cout << i << "\n";
+            cout << result[i] << "\n";
         }
     }
+    return 0;
 }
