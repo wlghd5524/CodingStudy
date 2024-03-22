@@ -2,7 +2,7 @@
 int main()
 {
     int N = 0;
-    int number[10001] = {
+    int number[10001] = {   //각 인덱스 값에 해당하는 숫자의 개수 저장
         0,
     };
     scanf("%d", &N);
